@@ -2,6 +2,7 @@
 
 import {faker} from '@faker-js/faker'
 import { loginPage } from '../page_object/loginPagePom';
+import { commmonElements } from '../page_object/commonElements';
 
 
 describe('register page', ()=>{
@@ -11,7 +12,7 @@ describe('register page', ()=>{
         cy.clearAllCookies()
         cy.clearAllLocalStorage()
         cy.clearAllSessionStorage
-        
+        // loginPagePom.loginUser(pa upisemo email i pass)
     });
 
 
@@ -21,4 +22,9 @@ describe('register page', ()=>{
         loginPage.submitButton.click();
         cy.wait(2000);
     });
+})
+
+
+describe('Gallery CRUD via API', () => {
+
 })

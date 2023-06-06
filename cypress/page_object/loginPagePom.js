@@ -13,7 +13,7 @@ class LoginPage {
     }
 
     loginUser(email, pass) {
-        this.passwordInputFieldemailInputField.type(email);
+        this.emailInputField.type(email); //this iz ove klase uhvati element
         this.passwordInputField.type(pass);
         this.submitButton.click();
     }

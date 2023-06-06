@@ -28,7 +28,7 @@ describe('create gallery', ()=>{
         createGalleryPage.imagesInputField.type('https://res.cloudinary.com/demo/image/upload/w_300/kitten.jpg');
         createGalleryPage.submitButton.click();
 
-       commonElements.galleryName.eq(0).should('contains', 'Cat');
+       commonElements.galleryName.eq(0).should('contain', 'Cat'); //asertacija
     });
 
     it('Without Title', () => {

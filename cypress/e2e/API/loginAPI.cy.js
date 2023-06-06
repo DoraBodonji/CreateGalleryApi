@@ -15,7 +15,7 @@ describe("Login page-PO", () => {
         
     })
     beforeEach("Login API", () =>{
-     
+        //ovako pozivamo iz commandsa
         // cy.LoginViaApi();
      
     });
@@ -25,6 +25,7 @@ describe("Login page-PO", () => {
         //nacin za dobavljanje vrednosti iz enviromenta
         let validEmail = Cypress.env('registeredEmail');
         let validPassword = Cypress.env('validPassword')
+        //nacin za dobavljanje vrednosti iz enviromenta
         // const{email, validPassword} = Cypress.env({});
         cy.LoginViaApi(validEmail,validPassword);
         cy.visit('');
@@ -41,7 +42,7 @@ describe("Login page-PO", () => {
         cy.url().should('contain', 'login')
         cy.wait(2000);
     })
-
+    //proveravamo preko bekeneda da li je galerija kreirana,pisemo na vrhu it bloka
     it.only('Login user intercept',()=>{
     cy.intercept({
             method: "POST",
@@ -49,6 +50,7 @@ describe("Login page-PO", () => {
         }).as('succesfullLogin')
 
         cy.visit('/login')
+        //nacin dobavljanja podataka iz enva
         loginPage.loginUser(Cypress.env('registeredEmail'),Cypress.env('validPassword'))
 
         cy.wait('@succesfullLogin').then((res)=>{
